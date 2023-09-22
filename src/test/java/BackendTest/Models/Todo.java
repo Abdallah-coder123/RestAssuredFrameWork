@@ -6,6 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Todo {
 
+    public Todo()
+    {
+
+    }
 public Todo(boolean isCompleted,String item)
 {
 this.isCompleted=isCompleted;
@@ -25,7 +29,9 @@ public Todo (String item)
     @JsonProperty("_id")
     private String id;
 
+    @JsonProperty("item")
     private String item;
+    @JsonProperty("userID")
     private String userID;
     private String createdAt;
     @JsonProperty("__v")
@@ -52,13 +58,16 @@ public Todo (String item)
         this.id = id;
     }
 
+    @JsonProperty("item")
     public String getItem() {
         return item;
     }
 
+    @JsonProperty("item")
     public void setItem(String item) {
         this.item = item;
     }
+
 
     public String getUserID() {
         return userID;
